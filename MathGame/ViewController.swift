@@ -36,12 +36,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         transformPlayer()
         changeQuestion()
     }
-
-
     
     // transform player direction
     func transformPlayer(){
@@ -67,7 +64,6 @@ class ViewController: UIViewController {
             number1 = Int.random(in: 0...9)
             answer = number + number1
             answerArray = ["\(answer)", "\(answer + 2)", "\(answer + 10)", "\(answer + 3)"]
-            
         } else if operationSymbolImageView[0].image == UIImage(systemName: "minus") {
             number = Int.random(in: 10...99)
             number1 = Int.random(in: 1...9)
@@ -122,7 +118,6 @@ class ViewController: UIViewController {
             questionindex += 1
             changeQuestion()
         }
-        
         if questionindex == 11 {
             showPicture()
         }
@@ -153,6 +148,8 @@ class ViewController: UIViewController {
             } else {
                 playerAimageView.image = tieImage
                 playerBimageView.image = tieImage
+                playerAQuestionNumberLabel.text = "10 / 10"
+                playerBQuestionNumberLabel.text = "10 / 10"
             }
         }
     }
